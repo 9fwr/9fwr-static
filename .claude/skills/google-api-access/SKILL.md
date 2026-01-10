@@ -104,6 +104,9 @@ Exports complete GTM container config (tags, triggers, variables, templates) to 
 ### `scripts/gtm_create_template.py <account_id> <container_id> <workspace_id> <template_file>`
 Uploads GTM custom template (.tpl file) to workspace. Requires `tagmanager.edit.containers` scope.
 
+### `scripts/gtm_manage_tag.py <command> <args>`
+Manage tags: create, pause, unpause, delete. Requires `tagmanager.edit.containers` scope.
+
 ## Creating New Scripts
 
 ### When to Create
