@@ -79,6 +79,7 @@ Cookie name: `_cnsnt`
 ✅ Full details dialog with category toggles
 ✅ Matches 9fwr.com design
 ✅ GTM integration (`cookie_consent_update` event)
+✅ Auto-detects footer "Cookie Settings" link (`#cookie-settings`)
 ✅ Responsive design
 ✅ No dependencies
 

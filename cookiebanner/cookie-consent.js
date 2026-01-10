@@ -305,6 +305,15 @@
     detailsEl.innerHTML = detailsHTML;
     document.body.appendChild(detailsEl.firstElementChild);
 
+    // Attach listener to cookie settings link
+    const settingsLink = document.getElementById('cookie-settings');
+    if (settingsLink) {
+      settingsLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        showCookieSettings();
+      });
+    }
+
     // Show banner if no consent exists
     const consent = getCookie(COOKIE_NAME);
     if (!consent) {
