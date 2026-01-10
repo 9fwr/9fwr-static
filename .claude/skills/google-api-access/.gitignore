@@ -1,0 +1,12 @@
+# OAuth credentials and tokens (never commit)
+credentials.json
+token.pickle
+scopes.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Exported data files (optional - uncomment if you don't want to commit exports)
+# container_*.json

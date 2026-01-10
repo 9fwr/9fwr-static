@@ -1,0 +1,10 @@
+# Google API Access Skill - Python Dependencies
+
+# Google OAuth 2.0 authentication
+google-auth-oauthlib>=1.0.0
+
+# Google API HTTP library
+google-auth-httplib2>=0.1.0
+
+# Google API Python client
+google-api-python-client>=2.0.0
