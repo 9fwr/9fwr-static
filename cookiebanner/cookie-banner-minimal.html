@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Banner Test</title>
+<style>
+body {
+  font-family: Lato, sans-serif;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+h1 { color: #ff1d5d; }
+button {
+  background: #ff1d5d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+}
+button:hover { opacity: 0.8; }
+pre {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+</style>
+</head>
+<body>
+
+<h1>Cookie Banner Test</h1>
+<p>Scroll down or wait - the banner should appear at the bottom.</p>
+
+<button onclick="CookieConsent.showCookieSettings()">Open Settings</button>
+<button onclick="document.cookie='_cnsnt=; path=/; max-age=0'; location.reload()">Reset Cookie</button>
+
+<h2>Current State</h2>
+<pre id="state">Loading...</pre>
+
+<p><a href="#" id="cookie-settings">Cookie Settings Link</a></p>
+
+<script src="cookie-consent.js"></script>
+<script>
+function update() {
+  const s = CookieConsent.getCookie();
+  document.getElementById('state').textContent = s ? JSON.stringify(s, null, 2) : 'No cookie';
+}
+setInterval(update, 1000);
+update();
+
+document.getElementById('cookie-settings').onclick = (e) => {
+  e.preventDefault();
+  CookieConsent.showCookieSettings();
+};
+</script>
+
+</body>
+</html>

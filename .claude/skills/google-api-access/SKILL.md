@@ -1,8 +1,15 @@
-# Google API Access Skill
+---
+name: google-api-access
+description: >
+  Provides authenticated access to Google APIs via OAuth 2.0. User specifies which API and what data is needed with required parameters. Skill handles authentication, scope management, and token refresh transparently. Returns raw API responses - no data transformation or analysis.
+  How it works: User: "Get [data] from [Google API] with [parameters]" -> Skill: Authenticates → Calls API → Returns raw response (or requests clarification) -> User: Processes returned data as needed (search, filter, transform, analyze).
+  OAuth 2.0 desktop flow, accumulates scopes, caches tokens.
+  APIs with existing scripts: Google Tag Manager: List accounts/containers/workspaces, export/create container configs (tags, triggers, variables, templates).
+  Other API: Any Google API can be requested - skill creates access scripts on demand (Analytics, Ads, Search Console, Drive, Sheets, Calendar, Gmail, etc.)
+---
 
 ## Description
 
-Provides authenticated access to Google APIs via OAuth 2.0. User specifies which API and what data is needed with required parameters. Skill handles authentication, scope management, and token refresh transparently. Returns raw API responses - no data transformation or analysis.
 
 **How it works:**
 - User: "Get [data] from [Google API] with [parameters]"
@@ -12,7 +19,7 @@ Provides authenticated access to Google APIs via OAuth 2.0. User specifies which
 **Auth**: OAuth 2.0 desktop flow, accumulates scopes, caches tokens
 
 **APIs with existing scripts:**
-- **Google Tag Manager**: List accounts/containers/workspaces, export container configs (tags, triggers, variables, templates)
+- **Google Tag Manager**: List accounts/containers/workspaces, export/create container configs (tags, triggers, variables, templates)
 
 **Other APIs**: Any Google API can be requested - skill creates access scripts on demand (Analytics, Ads, Search Console, Drive, Sheets, Calendar, Gmail, etc.)
 
@@ -62,13 +69,16 @@ Scopes **accumulate** (never replace) to minimize re-authentication:
 **Result**: Once broader permissions granted, never re-auth for subsets.
 
 ### Error-Driven Flow
-API scripts are simple - read `token.pickle`, fail if missing/invalid. Skill handles recovery:
+API scripts are simple - read `token.pickle`, fail if missing/invalid. When script needs new scope:
 
 ```
-User request → Script fails with error → Skill runs google_auth.py → Script succeeds
+1. Script fails: "Token missing required scope: tagmanager.edit.containers"
+2. Claude updates scopes.json to add the new scope
+3. Claude runs google_auth.py (triggers OAuth flow with expanded scopes)
+4. Claude re-runs script → succeeds with updated token
 ```
 
-**Example**: Script says "No token, run google_auth.py" → Skill runs it → Script re-runs successfully
+**Important**: Scripts never handle OAuth - they only read token and fail clearly. Claude must manually update `scopes.json` before running auth.
 
 ### Re-authentication Triggers
 - No token exists
@@ -90,6 +100,9 @@ Lists all GTM accounts, containers, and workspaces. Outputs hierarchical text.
 
 ### `scripts/gtm_export_container.py <account_id> <container_id> [workspace_id] [output_file]`
 Exports complete GTM container config (tags, triggers, variables, templates) to JSON file.
+
+### `scripts/gtm_create_template.py <account_id> <container_id> <workspace_id> <template_file>`
+Uploads GTM custom template (.tpl file) to workspace. Requires `tagmanager.edit.containers` scope.
 
 ## Creating New Scripts
 
