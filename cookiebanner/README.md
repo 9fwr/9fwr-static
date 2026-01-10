@@ -78,7 +78,8 @@ Cookie name: `_cnsnt`
 ✅ Small banner at bottom (Deny/Allow/Show details)
 ✅ Full details dialog with category toggles
 ✅ Matches 9fwr.com design
-✅ GTM integration (`cookie_consent_update` event)
+✅ **Direct Google Consent Mode updates** via gtag (instant, no page reload needed)
+✅ GTM integration (`cookie_consent_update` event for tracking)
 ✅ Auto-detects footer "Cookie Settings" link (`#cookie-settings`)
 ✅ Responsive design
 ✅ No dependencies
@@ -136,8 +137,11 @@ That's it! The template will:
 3. **Cookie exists?**
    - Yes → Read `_cnsnt` cookie and update consent states
    - No → Wait for user to interact with banner
-4. **User makes choice** → Cookie set → Page reloads or consent updates
-5. **Tags fire** based on consent states
+4. **User makes choice** → Cookie banner calls `gtag('consent', 'update', ...)` **immediately**
+   - Cookie set with user preferences
+   - GTM consent state updated instantly (no page reload needed)
+   - `cookie_consent_update` event pushed to dataLayer for tracking
+5. **Tags fire** based on updated consent states
 
 ### Verify It Works
 

@@ -2,6 +2,9 @@
  * Minimal Cookie Consent Banner
  * Manages consent for analytics_storage and ad_storage
  * Cookie name: _cnsnt
+ *
+ * Updates Google Consent Mode via gtag('consent', 'update', ...)
+ * immediately when user changes settings (no page reload needed)
  */
 
 (function() {
@@ -225,7 +228,18 @@
     };
     setCookie(COOKIE_NAME, consent);
 
-    // Push to GTM dataLayer
+    // Update Google Consent Mode directly via gtag
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        ad_storage: marketing ? 'granted' : 'denied',
+        ad_user_data: marketing ? 'granted' : 'denied',
+        ad_personalization: marketing ? 'granted' : 'denied',
+        analytics_storage: analytics ? 'granted' : 'denied',
+        functionality_storage: 'granted'
+      });
+    }
+
+    // Push to GTM dataLayer for tracking/debugging
     if (window.dataLayer) {
       window.dataLayer.push({
         event: 'cookie_consent_update',
