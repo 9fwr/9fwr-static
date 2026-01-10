@@ -228,8 +228,12 @@
     };
     setCookie(COOKIE_NAME, consent);
 
-    // Update Google Consent Mode directly via gtag
-    if (typeof gtag !== 'undefined') {
+    // Update Google Consent Mode (GTM-compatible)
+    if (window.dataLayer) {
+      // Define gtag helper if not already defined (standard GTM approach)
+      window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+
+      // Update consent state
       gtag('consent', 'update', {
         ad_storage: marketing ? 'granted' : 'denied',
         ad_user_data: marketing ? 'granted' : 'denied',
@@ -237,10 +241,8 @@
         analytics_storage: analytics ? 'granted' : 'denied',
         functionality_storage: 'granted'
       });
-    }
 
-    // Push to GTM dataLayer for tracking/debugging
-    if (window.dataLayer) {
+      // Push tracking event
       window.dataLayer.push({
         event: 'cookie_consent_update',
         consent: consent
