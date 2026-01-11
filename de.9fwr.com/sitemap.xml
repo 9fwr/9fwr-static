@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://de.9fwr.com/</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/data-thinking-program</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/data-thinking-program" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/data-thinking-program" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/data-boost</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/data-boost" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/data-boost" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/google-analytics-consulting</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/google-analytics-consulting" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/google-analytics-consulting" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/what-is-data-thinking</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/what-is-data-thinking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/what-is-data-thinking" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/data-contracts-solve-your-data-issues</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/data-contracts-solve-your-data-issues" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/data-contracts-solve-your-data-issues" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/the-one-thing-to-understand-business-intelligence</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/the-one-thing-to-understand-business-intelligence" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/the-one-thing-to-understand-business-intelligence" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/13-types-of-metrics-you-should-know</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/13-types-of-metrics-you-should-know" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/13-types-of-metrics-you-should-know" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/shopify-tracking-cookie-banner-google-tag-manager-dsgvo</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/shopify-tracking-cookie-banner-google-tag-manager-dsgvo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/shopify-tracking-cookie-banner-google-tag-manager-dsgvo" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/dsgvo-kategorien</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/dsgvo-kategorien" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/dsgvo-kategorien" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/imprint</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/imprint" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/imprint" />
+  </url>
+  <url>
+    <loc>https://de.9fwr.com/privacy-policy</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://de.9fwr.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://9fwr.com/privacy-policy" />
+  </url>
+</urlset>
